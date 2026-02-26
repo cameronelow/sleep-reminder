@@ -50,8 +50,8 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({
-      sent: results.filter((r) => r.success).length,
-      failed: results.filter((r) => !r.success).length,
+      sent: results.filter((r: { success: boolean }) => r.success).length,
+      failed: results.filter((r: { success: boolean }) => !r.success).length,
     });
   } catch (err) {
     return NextResponse.json(
