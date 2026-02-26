@@ -1,17 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { signUp } from "@/lib/auth-client";
 import styles from "../sign-in/auth.module.css";
 
 export default function SignUpPage() {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [verifyPending, setVerifyPending] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -22,33 +23,12 @@ export default function SignUpPage() {
     setLoading(false);
 
     if (result.error) {
-      console.error("Sign up error:", result.error);
       const msg = result.error.message;
       const status = result.error.status;
-      if (msg) {
-        setError(status ? `Error ${status}: ${msg}` : msg);
-      } else if (status === 500) {
-        setError("Server error. Check that all environment variables are set in Vercel.");
-      } else {
-        setError(`Sign up failed (${status ?? "unknown error"}). Check the browser console for details.`);
-      }
+      setError(msg ? (status ? `Error ${status}: ${msg}` : msg) : `Sign up failed (${status ?? "unknown error"}).`);
     } else {
-      setVerifyPending(true);
+      router.push("/dashboard");
     }
-  }
-
-  if (verifyPending) {
-    return (
-      <div className={styles.container}>
-        <div className={styles.card}>
-          <h1 className={styles.title}>Check your email</h1>
-          <p className={styles.subtitle}>
-            We sent a verification link to <strong>{email}</strong>. Click it to activate your account, then{" "}
-            <Link href="/sign-in" className={styles.link}>sign in</Link>.
-          </p>
-        </div>
-      </div>
-    );
   }
 
   return (
