@@ -22,7 +22,16 @@ export default function SignUpPage() {
     setLoading(false);
 
     if (result.error) {
-      setError(result.error.message ?? "Sign up failed. Please try again.");
+      console.error("Sign up error:", result.error);
+      const msg = result.error.message;
+      const status = result.error.status;
+      if (msg) {
+        setError(status ? `Error ${status}: ${msg}` : msg);
+      } else if (status === 500) {
+        setError("Server error. Check that all environment variables are set in Vercel.");
+      } else {
+        setError(`Sign up failed (${status ?? "unknown error"}). Check the browser console for details.`);
+      }
     } else {
       setVerifyPending(true);
     }
