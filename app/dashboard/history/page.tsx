@@ -1,5 +1,8 @@
 import { getReminderHistory } from "@/lib/actions/reminders";
+import type { Reminder, Notification } from "@prisma/client";
 import styles from "./page.module.css";
+
+type ReminderWithNotifications = Reminder & { notifications: Notification[] };
 
 export default async function HistoryPage() {
   const reminders = await getReminderHistory();
@@ -17,9 +20,9 @@ export default async function HistoryPage() {
         </div>
       ) : (
         <div className={styles.list}>
-          {reminders.map((r) => {
-            const allSent = r.notifications.length > 0 && r.notifications.every((n) => n.status === "sent");
-            const anyFailed = r.notifications.some((n) => n.status === "failed");
+          {reminders.map((r: ReminderWithNotifications) => {
+            const allSent = r.notifications.length > 0 && r.notifications.every((n: Notification) => n.status === "sent");
+            const anyFailed = r.notifications.some((n: Notification) => n.status === "failed");
             const statusLabel = r.sentAt
               ? allSent
                 ? "Delivered"
