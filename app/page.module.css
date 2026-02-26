@@ -39,9 +39,9 @@
 
 .intro h1 {
   max-width: 320px;
-  font-size: 40px;
+  font-size: 46px;
   font-weight: 600;
-  line-height: 48px;
+  line-height: 54px;
   letter-spacing: -2.4px;
   text-wrap: balance;
   color: var(--text-primary);
@@ -49,8 +49,8 @@
 
 .intro p {
   max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 34px;
   text-wrap: balance;
   color: var(--text-secondary);
 }
@@ -66,7 +66,7 @@
   width: 100%;
   max-width: 440px;
   gap: 16px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .ctas a {
@@ -116,8 +116,8 @@ a.secondary {
   }
 
   .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 36px;
+    line-height: 44px;
     letter-spacing: -1.92px;
   }
 }

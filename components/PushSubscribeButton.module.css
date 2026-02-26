@@ -1,0 +1,51 @@
+.buttonEnable {
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.buttonEnable:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.buttonDisable {
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.buttonDisable:hover:not(:disabled) {
+  background: var(--card);
+  color: var(--foreground);
+}
+
+.buttonEnable:disabled,
+.buttonDisable:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.unsupported {
+  font-size: 14px;
+  color: var(--muted);
+}

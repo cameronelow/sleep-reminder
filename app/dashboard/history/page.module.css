@@ -1,0 +1,95 @@
+.heading {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--background);
+  transition: background 0.15s;
+}
+
+.item:hover {
+  background: var(--card);
+}
+
+.item + .item {
+  border-top: 1px solid var(--border);
+}
+
+.itemMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemTime {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.itemMessage {
+  font-size: 14px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.statusDelivered {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--success);
+}
+
+.statusSent {
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--primary);
+}
+
+.statusFailed {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--danger);
+}
+
+.statusPending {
+  background: rgba(107, 114, 128, 0.12);
+  color: var(--muted);
+}

@@ -1,0 +1,49 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 24px;
+  height: 56px;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 17px;
+  flex: 1;
+}
+
+.links {
+  display: flex;
+  gap: 8px;
+}
+
+.navLink {
+  padding: 6px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  color: var(--muted);
+  transition: color 0.15s, background 0.15s;
+}
+
+.navLink:hover {
+  color: var(--foreground);
+  background: var(--card);
+}
+
+
+.content {
+  flex: 1;
+  padding: 40px 24px;
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}

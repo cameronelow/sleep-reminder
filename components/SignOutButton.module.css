@@ -1,0 +1,17 @@
+.button {
+  padding: 6px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s, background 0.15s;
+}
+
+.button:hover {
+  color: var(--foreground);
+  background: var(--card);
+}
