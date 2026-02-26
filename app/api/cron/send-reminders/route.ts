@@ -112,7 +112,7 @@ export async function GET(req: NextRequest) {
             body: JSON.stringify({
               reminderId: reminder.id,
               userId: settings.userId,
-              title: "Sleep Reminder",
+              title: "Circadian",
               body: message,
             }),
           });

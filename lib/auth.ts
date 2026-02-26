@@ -16,7 +16,7 @@ export const auth = betterAuth({
     requireEmailVerification: true,
     sendResetPassword: async ({ user, url }) => {
       await resend.emails.send({
-        from: `Sleep Reminder <${process.env.EMAIL_FROM ?? "onboarding@resend.dev"}>`,
+        from: `Circadian <${process.env.EMAIL_FROM ?? "onboarding@resend.dev"}>`,
         to: user.email,
         subject: "Reset your password",
         html: `<p>Click <a href="${url}">here</a> to reset your password. This link expires in 1 hour.</p>`,
@@ -26,7 +26,7 @@ export const auth = betterAuth({
   emailVerification: {
     sendVerificationEmail: async ({ user, url }) => {
       await resend.emails.send({
-        from: `Sleep Reminder <${process.env.EMAIL_FROM ?? "onboarding@resend.dev"}>`,
+        from: `Circadian <${process.env.EMAIL_FROM ?? "onboarding@resend.dev"}>`,
         to: user.email,
         subject: "Verify your email",
         html: `<p>Click <a href="${url}">here</a> to verify your email address.</p>`,

@@ -16,7 +16,7 @@ export default async function DashboardLayout({
   return (
     <div className={styles.shell}>
       <nav className={styles.nav}>
-        <span className={styles.brand}>Sleep Reminder</span>
+        <span className={styles.brand}>Circadian</span>
         <div className={styles.links}>
           <Link href="/dashboard" className={styles.navLink}>Dashboard</Link>
           <Link href="/dashboard/settings" className={styles.navLink}>Settings</Link>

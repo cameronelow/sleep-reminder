@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     });
 
     const results = await Promise.all(
-      subscriptions.map(async (sub) => {
+      subscriptions.map(async (sub: { endpoint: string; p256dh: string; auth: string }) => {
         const result = await sendPushNotification(sub, { title, body: messageBody });
 
         try {

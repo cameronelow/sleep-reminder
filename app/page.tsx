@@ -6,7 +6,7 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.intro}>
-          <h1>Sleep Reminder</h1>
+          <h1>Circadian</h1>
           <p>
             Get a browser notification when it&apos;s time to wind down so you wake up
             well-rested every morning.

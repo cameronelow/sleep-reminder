@@ -32,7 +32,7 @@ export default function SignInPage() {
     <div className={styles.container}>
       <div className={styles.card}>
         <h1 className={styles.title}>Sign In</h1>
-        <p className={styles.subtitle}>Welcome back to Sleep Reminder</p>
+        <p className={styles.subtitle}>Welcome back to Circadian</p>
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.field}>

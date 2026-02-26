@@ -1,7 +1,7 @@
-// Service Worker for Sleep Reminder Web Push notifications
+// Service Worker for Circadian Web Push notifications
 
 self.addEventListener("push", (event) => {
-  let data = { title: "Sleep Reminder", body: "Time to wind down!" };
+  let data = { title: "Circadian", body: "Time to wind down!" };
 
   if (event.data) {
     try {
@@ -16,7 +16,7 @@ self.addEventListener("push", (event) => {
       body: data.body,
       icon: "/icon-192.png",
       badge: "/icon-192.png",
-      tag: "sleep-reminder",
+      tag: "circadian",
       renotify: true,
       requireInteraction: true, // Keeps the notification visible until dismissed
     })

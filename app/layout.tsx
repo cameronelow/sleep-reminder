@@ -9,7 +9,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Sleep Reminder",
+  title: "Circadian",
   description: "Get notified when it's time to wind down for a good night's sleep.",
 };
 
