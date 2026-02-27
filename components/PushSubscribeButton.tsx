@@ -51,7 +51,8 @@ export default function PushSubscribeButton({ pushEnabled }: Props) {
       });
 
       if (!res.ok) {
-        throw new Error("Failed to save subscription on server.");
+        const body = await res.json().catch(() => ({}));
+        throw new Error(`Server error ${res.status}: ${body.error ?? "unknown"}`);
       }
 
       await updateUserSettings({ pushEnabled: true } as Parameters<typeof updateUserSettings>[0]);
