@@ -65,6 +65,12 @@ export default function SignInPage() {
           <button type="submit" disabled={loading} className={styles.button}>
             {loading ? "Signing in..." : "Sign In"}
           </button>
+
+          <p style={{ textAlign: "right", margin: 0 }}>
+            <Link href="/forgot-password" className={styles.link} style={{ fontSize: 14 }}>
+              Forgot password?
+            </Link>
+          </p>
         </form>
 
         <p className={styles.footer}>
